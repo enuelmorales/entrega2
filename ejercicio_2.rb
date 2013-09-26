@@ -49,19 +49,19 @@ end
 p.total
 # => 54.0
 
-#p.apply_discount do |purchase|
-#  purchase.total -= purchase.total * 0.2 if purchase.products.size > 10
-#end
-#
-#p.apply_discount do |purchase|
-#  iguales = []
-#  purchase.products.each do |product|
-#    iguales[product.name] += 1
-#  end
-#  purchase.products.each do |product|
-#    if iguales[product.name] > 3
-#      purchase.total -= product.price
-#      iguales[product.name] = -1
-#    end
-#  end
-#end
+p.apply_discount do |purchase|
+  purchase.total -= purchase.total * 0.2 if purchase.products.size > 10
+end
+
+p.apply_discount do |purchase|
+  iguales = []
+  purchase.products.each do |product|
+    iguales[product.name] += 1
+  end
+  purchase.products.each do |product|
+    if iguales[product.name] > 3
+      purchase.total -= product.price
+      iguales[product.name] = -1
+    end
+  end
+end
